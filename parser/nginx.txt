@@ -1,0 +1,33 @@
+listen 80;
+
+server {
+	listen 80;
+	server_name apache;
+	location / {
+	
+		proxy_pass 23;
+	}
+
+	location aer {
+		proxy_pass 25;
+	}
+}
+
+server2 {
+	
+	listen  25;
+	server_name couch;
+	location  {
+		proxy_pass 55;
+	}
+}
+
+
+server3 {
+	listen 30;
+	server_name some;
+	location {
+		proxy_pass 23;
+	}
+}
+
